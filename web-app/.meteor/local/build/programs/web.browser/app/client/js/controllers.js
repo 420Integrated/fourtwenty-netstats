@@ -32,7 +32,7 @@ Blockchain.insert({
 	lastBlocksTime: _.fill(Array(MAX_BINS), 2),
 	difficultyChart: _.fill(Array(MAX_BINS), 2),
 	transactionDensity: _.fill(Array(MAX_BINS), 2),
-	gasSpending: _.fill(Array(MAX_BINS), 2),
+	smokeSpending: _.fill(Array(MAX_BINS), 2),
 	miners: [],
 
 	map: [],
@@ -293,7 +293,7 @@ function socketAction(action, data)
 						'stats.mining': data.stats.mining,
 						'stats.hashrate': data.stats.hashrate,
 						'stats.peers': data.stats.peers,
-						'stats.gasPrice': data.stats.gasPrice,
+						'stats.smokePrice': data.stats.smokePrice,
 						'stats.uptime': data.stats.uptime
 					}});
 
@@ -383,8 +383,8 @@ function socketAction(action, data)
 			if( !_.isEqual(meta.transactionDensity, data.transactions) && data.transactions.length >= MAX_BINS )
 				meta.transactionDensity = data.transactions;
 
-			if( !_.isEqual(meta.gasSpending, data.gasSpending) && data.gasSpending.length >= MAX_BINS )
-				meta.gasSpending = data.gasSpending;
+			if( !_.isEqual(meta.smokeSpending, data.smokeSpending) && data.smokeSpending.length >= MAX_BINS )
+				meta.smokeSpending = data.smokeSpending;
 
 			if( !_.isEqual(meta.miners, data.miners) ) {
 				meta.miners = data.miners;

@@ -6489,7 +6489,7 @@ button.close {
 
 /* '' */
 
-.icon-gas:before {
+.icon-smoke:before {
   content: '\e811';
 }
 
@@ -6513,7 +6513,7 @@ button.close {
 
 /* '' */
 
-.icon-gasprice:before {
+.icon-smokeprice:before {
   content: '\e815';
 }
 
@@ -6675,7 +6675,7 @@ button.close {
 
 /* '' */
 
-.icon-gas:before {
+.icon-smoke:before {
   content: '\e811';
 }
 
@@ -6699,7 +6699,7 @@ button.close {
 
 /* '' */
 
-.icon-gasprice:before {
+.icon-smokeprice:before {
   content: '\e815';
 }
 
@@ -6773,7 +6773,7 @@ button.close {
   *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe810;&nbsp;');
 }
 
-.icon-gas {
+.icon-smoke {
   *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe811;&nbsp;');
 }
 
@@ -6789,7 +6789,7 @@ button.close {
   *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe814;&nbsp;');
 }
 
-.icon-gasprice {
+.icon-smokeprice {
   *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe815;&nbsp;');
 }
 
@@ -6872,7 +6872,7 @@ button.close {
   *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe810;&nbsp;');
 }
 
-.icon-gas {
+.icon-smoke {
   *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe811;&nbsp;');
 }
 
@@ -6888,7 +6888,7 @@ button.close {
   *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe814;&nbsp;');
 }
 
-.icon-gasprice {
+.icon-smokeprice {
   *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe815;&nbsp;');
 }
 
@@ -7047,7 +7047,7 @@ button.close {
 
 /* '' */
 
-.icon-gas:before {
+.icon-smoke:before {
   content: '\e811';
 }
 
@@ -7071,7 +7071,7 @@ button.close {
 
 /* '' */
 
-.icon-gasprice:before {
+.icon-smokeprice:before {
   content: '\e815';
 }
 

@@ -260,9 +260,9 @@ Template['indexMeteor'].onRendered(function(){
         sparkChart(template, 'transactionDensity', 'spark-transactions');
     });
 
-    // gasspending chart
+    // smokespending chart
     this.autorun(function(){
-        sparkChart(template, 'gasSpending', 'spark-gasspending');
+        sparkChart(template, 'smokeSpending', 'spark-smokespending');
     });
 });
 

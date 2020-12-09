@@ -81,7 +81,7 @@ Template["indexMeteor"] = new Template("Template.indexMeteor", (function() {
     }, "\n              ", HTML.DIV({
       "class": "pull-left icon-full-width"
     }, HTML.I({
-      "class": "icon-gas"
+      "class": "icon-smoke"
     })), "\n              ", HTML.DIV({
       "class": "big-details-holder"
     }, HTML.SPAN({
@@ -158,15 +158,15 @@ Template["indexMeteor"] = new Template("Template.indexMeteor", (function() {
     }))), "\n              "), "\n              ", HTML.DIV({
       "class": "col-xs-3 stat-holder box"
     }, "\n                ", HTML.DIV({
-      "class": "gasprice text-info"
+      "class": "smokeprice text-info"
     }, HTML.I({
-      "class": "icon-gasprice"
+      "class": "icon-smokeprice"
     }), HTML.SPAN({
       "class": "small-title"
-    }, "gas price"), HTML.SPAN({
+    }, "smoke price"), HTML.SPAN({
       "class": "small-value"
-    }, Blaze.View("lookup:gasPriceFilter", function() {
-      return Spacebars.mustache(view.lookup("gasPriceFilter"), Spacebars.dot(view.lookup("bestStats"), "gasPrice", "toString"));
+    }, Blaze.View("lookup:smokePriceFilter", function() {
+      return Spacebars.mustache(view.lookup("smokePriceFilter"), Spacebars.dot(view.lookup("bestStats"), "smokePrice", "toString"));
     }))), "\n              "), "\n              ", HTML.DIV({
       "class": "col-xs-3 stat-holder box"
     }, "\n                ", HTML.DIV({
@@ -282,8 +282,8 @@ Template["indexMeteor"] = new Template("Template.indexMeteor", (function() {
       "class": "big-info chart text-info"
     }, HTML.SPAN({
       "class": "small-title"
-    }, "gas spending"), "\n                  ", HTML.getTag("sparkchart")({
-      "class": "big-details spark-gasspending"
+    }, "smoke spending"), "\n                  ", HTML.getTag("sparkchart")({
+      "class": "big-details spark-smokespending"
     }), "\n                "), "\n              "), "\n            "), "\n          "), "\n          ", HTML.DIV({
       "class": "col-xs-4 stat-holder map-holder"
     }, "\n            ", HTML.getTag("nodemap")({
@@ -410,7 +410,7 @@ Template["indexMeteor"] = new Template("Template.indexMeteor", (function() {
     "data-placement": "top",
     title: "Propagation time",
     "ng-click": "orderTable(['-stats.block.number', 'stats.block.propagation'], false)",
-    "class": "icon-gas"
+    "class": "icon-smoke"
   })), "\n            ", HTML.TH({
     "class": "th-peerPropagationChart"
   }), "\n            ", HTML.TH({
@@ -420,7 +420,7 @@ Template["indexMeteor"] = new Template("Template.indexMeteor", (function() {
     "data-placement": "top",
     title: "Average propagation time",
     "ng-click": "orderTable(['stats.propagationAvg'], false)",
-    "class": "icon-gas"
+    "class": "icon-smoke"
   })), "\n            ", HTML.TH(HTML.I({
     "data-toggle": "tooltip",
     "data-placement": "top",
@@ -478,7 +478,7 @@ Template["indexMeteor"] = new Template("Template.indexMeteor", (function() {
     }), "(", Blaze.View("lookup:info.ip", function() {
       return Spacebars.mustache(Spacebars.dot(view.lookup("info"), "ip"));
     }), ")"), HTML.A({
-      href: "https://github.com/ethereum/wiki/wiki/Network-Status#updating",
+      href: "https://netstats.420integrated.com/updating",
       target: "_blank",
       "data-toggle": "tooltip",
       "data-placement": "top",

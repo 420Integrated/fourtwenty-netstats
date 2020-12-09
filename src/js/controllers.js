@@ -21,11 +21,11 @@ netStatsApp.controller('StatsCtrl', function($scope, $filter, $localStorage, soc
 	$scope.uncleCount = 0;
 	$scope.bestStats = {};
 
-	$scope.lastGasLimit = _.fill(Array(MAX_BINS), 2);
+	$scope.lastSmokeLimit = _.fill(Array(MAX_BINS), 2);
 	$scope.lastBlocksTime = _.fill(Array(MAX_BINS), 2);
 	$scope.difficultyChart = _.fill(Array(MAX_BINS), 2);
 	$scope.transactionDensity = _.fill(Array(MAX_BINS), 2);
-	$scope.gasSpending = _.fill(Array(MAX_BINS), 2);
+	$scope.smokeSpending = _.fill(Array(MAX_BINS), 2);
 	$scope.miners = [];
 
 
@@ -278,7 +278,7 @@ netStatsApp.controller('StatsCtrl', function($scope, $filter, $localStorage, soc
 						$scope.nodes[index].stats.mining = data.stats.mining;
 						$scope.nodes[index].stats.hashrate = data.stats.hashrate;
 						$scope.nodes[index].stats.peers = data.stats.peers;
-						$scope.nodes[index].stats.gasPrice = data.stats.gasPrice;
+						$scope.nodes[index].stats.smokePrice = data.stats.smokePrice;
 						$scope.nodes[index].stats.uptime = data.stats.uptime;
 
 						if( !_.isUndefined(data.stats.latency) && _.get($scope.nodes[index], 'stats.latency', 0) !== data.stats.latency )
@@ -332,8 +332,8 @@ netStatsApp.controller('StatsCtrl', function($scope, $filter, $localStorage, soc
 				if( !_.isEqual($scope.avgHashrate, data.avgHashrate) )
 					$scope.avgHashrate = data.avgHashrate;
 
-				if( !_.isEqual($scope.lastGasLimit, data.gasLimit) && data.gasLimit.length >= MAX_BINS )
-					$scope.lastGasLimit = data.gasLimit;
+				if( !_.isEqual($scope.lastSmokeLimit, data.smokeLimit) && data.smokeLimit.length >= MAX_BINS )
+					$scope.lastSmokeLimit = data.smokeLimit;
 
 				if( !_.isEqual($scope.lastBlocksTime, data.blocktime) && data.blocktime.length >= MAX_BINS )
 					$scope.lastBlocksTime = data.blocktime;
@@ -356,8 +356,8 @@ netStatsApp.controller('StatsCtrl', function($scope, $filter, $localStorage, soc
 				if( !_.isEqual($scope.transactionDensity, data.transactions) && data.transactions.length >= MAX_BINS )
 					$scope.transactionDensity = data.transactions;
 
-				if( !_.isEqual($scope.gasSpending, data.gasSpending) && data.gasSpending.length >= MAX_BINS )
-					$scope.gasSpending = data.gasSpending;
+				if( !_.isEqual($scope.smokeSpending, data.smokeSpending) && data.smokeSpending.length >= MAX_BINS )
+					$scope.smokeSpending = data.smokeSpending;
 
 				if( !_.isEqual($scope.miners, data.miners) ) {
 					$scope.miners = data.miners;

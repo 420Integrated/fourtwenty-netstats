@@ -71,8 +71,8 @@
 .icon-time:before { content: '\e80e'; } /* '' */
 .icon-clock:before { content: '\e80f'; } /* '' */
 .icon-group:before { content: '\e810'; } /* '' */
-.icon-gas:before { content: '\e811'; } /* '' */
+.icon-smoke:before { content: '\e811'; } /* '' */
 .icon-difficulty:before { content: '\e812'; } /* '' */
 .icon-uncle:before { content: '\e813'; } /* '' */
 .icon-hashrate:before { content: '\e814'; } /* '' */
-.icon-gasprice:before { content: '\e815'; } /* '' */
+.icon-smokeprice:before { content: '\e815'; } /* '' */

@@ -33,7 +33,7 @@ block content
       div.col-xs-2.stat-holder
         div.big-info.avgblocktime(class="{{ avgBlockTime | avgTimeClass }}")
           div.pull-left.icon-full-width
-            i.icon-gas
+            i.icon-smoke
           div.big-details-holder
             span.small-title avg block time
             span.big-details {{ avgBlockTime | avgTimeFilter }}
@@ -68,15 +68,15 @@ block content
               span.small-title active nodes
               span.small-value {{nodesActive}}/{{nodesTotal}}
           div.col-xs-2.stat-holder.box
-            div.gasprice.text-info
-              i.icon-gasprice
-              span.small-title gas price
-              span.small-value {{ bestStats.gasPrice.toString() | gasPriceFilter }}
+            div.smokeprice.text-info
+              i.icon-smokeprice
+              span.small-title smoke price
+              span.small-value {{ bestStats.smokePrice.toString() | smokePriceFilter }}
           div.col-xs-2.stat-holder.box
-            div.gasprice.text-info
-              i.icon-gasprice
-              span.small-title gas limit
-              span.small-value {{ bestStats.block.gasLimit }} gas
+            div.smokeprice.text-info
+              i.icon-smokeprice
+              span.small-title smoke limit
+              span.small-value {{ bestStats.block.smokeLimit }} smoke
           div.col-xs-2.stat-holder.box
             div.page-latency(class="{{ {active: true, latency: latency} | latencyClass }}")
               i.icon-clock
@@ -108,7 +108,7 @@ block content
 
               div.col-xs-3.stat-holder.xpull-right
                 div.big-info.chart.xdouble-chart(class="{{ blockPropagationAvg | propagationAvgTimeClass : true }}")
-                  //- i.icon-gas
+                  //- i.icon-smoke
                   span.small-title block propagation
                   //- span.small-value {{ blockPropagationAvg | blockPropagationFilter : '' }}
                   histogram.big-details.d3-blockpropagation(data="blockPropagationChart")
@@ -139,16 +139,16 @@ block content
 
               div.col-xs-3.stat-holder
                 div.big-info.chart.text-info
-                  //- i.icon-gasprice
-                  span.small-title gas spending
-                  sparkchart.big-details.spark-gasspending(data="{{gasSpending.join(',')}}")
+                  //- i.icon-smokeprice
+                  span.small-title smoke spending
+                  sparkchart.big-details.spark-smokespending(data="{{smokeSpending.join(',')}}")
 
               div.col-xs-3.stat-holder
                 div.big-info.chart.text-info
                   //- i.icon-difficulty
-                  span.small-title gas limit
+                  span.small-title smoke limit
                   //- span.small-value {{ lastDifficulty | number }}
-                  sparkchart.big-details.spark-difficulty(data="{{lastGasLimit.join(',')}}")
+                  sparkchart.big-details.spark-difficulty(data="{{lastSmokeLimit.join(',')}}")
 
 
 
@@ -163,13 +163,13 @@ block content
             div.active-nodes.text-warning
               i.icon-warning-o
               span.small-title ATTENTION!
-              span.small-value This page does not represent the entire state of the ethereum network - listing a node on this page is a voluntary process.
+              span.small-value This page does not represent the entire state of the 420coin network - listing a node on this page is a voluntary process.
           //- div.col-xs-12.stat-holder.box
           //-   div.active-nodes.text-danger
           //-     i.icon-hashrate
           //-     span.small-title SECURITY ALERT
           //-     span.small-value
-          //-       a(href="https://blog.ethereum.org/2015/09/10/security-alert-previous-security-patch-can-lead-to-invalid-state-root-on-go-clients-with-a-specific-transaction-sequence-fixed-please-update/", target="_blank", class="text-danger") Read the blog post
+          //-       a(href="https://420integrated.com", target="_blank", class="text-danger") Read the blog post
 
 
       //- div.clearfix
@@ -204,10 +204,10 @@ block content
             th.th-blocktime
               i.icon-time(data-toggle="tooltip", data-placement="top", title="Last block time", ng-click="orderTable(['-stats.block.received'], false)")
             th.th-peerPropagationTime
-              i.icon-gas(data-toggle="tooltip", data-placement="top", title="Propagation time", ng-click="orderTable(['-stats.block.number', 'stats.block.propagation'], false)")
+              i.icon-smoke(data-toggle="tooltip", data-placement="top", title="Propagation time", ng-click="orderTable(['-stats.block.number', 'stats.block.propagation'], false)")
             th.th-peerPropagationChart
             th.th-peerPropagationAvg
-              i.icon-gas(data-toggle="tooltip", data-placement="top", title="Average propagation time", ng-click="orderTable(['stats.propagationAvg'], false)")
+              i.icon-smoke(data-toggle="tooltip", data-placement="top", title="Average propagation time", ng-click="orderTable(['stats.propagationAvg'], false)")
             th
               i.icon-bulb(data-toggle="tooltip", data-placement="top", title="Up-time", ng-click="orderTable(['-stats.uptime'], false)")
         tbody(ng-cloak)
@@ -217,7 +217,7 @@ block content
             td.nodeInfo(rel="{{node.id}}")
               span.small(data-toggle="tooltip", data-placement="top", data-html="true", data-original-title="{{node | geoTooltip}}") {{node.info.name}}
               //- span.small &nbsp;({{node.info.ip}})
-              a.small(href="https://github.com/ethereum/wiki/wiki/Network-Status#updating", target="_blank", data-toggle="tooltip", data-placement="top", data-html="true", data-original-title="Netstats client needs update.<br>Click this icon for instructions.", class="{{ node.info | nodeClientClass : currentApiVersion }}")
+              a.small(href="https://github.com/420integrated/go-420coin/wiki/wiki/Network-Status#updating", target="_blank", data-toggle="tooltip", data-placement="top", data-html="true", data-original-title="Netstats client needs update.<br>Click this icon for instructions.", class="{{ node.info | nodeClientClass : currentApiVersion }}")
                 i.icon-warning-o
             td
               div.small(ng-bind-html="node.info.node | nodeVersion")

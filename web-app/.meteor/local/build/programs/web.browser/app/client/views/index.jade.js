@@ -47,7 +47,7 @@ Template["index"] = new Template("Template.index", (function() {
     "class": function() {
       return [ "big-info", " ", "avgblocktime", " ", Spacebars.mustache(view.lookup("avgTimeClass"), view.lookup("avgBlockTime")) ];
     }
-  }, HTML.Raw('<div class="pull-left icon-full-width"><i class="icon-gas"></i></div>'), "\n", HTML.DIV({
+  }, HTML.Raw('<div class="pull-left icon-full-width"><i class="icon-smoke"></i></div>'), "\n", HTML.DIV({
     "class": "big-details-holder"
   }, HTML.Raw('<span class="small-title">avg block time</span>'), "\n", HTML.SPAN({
     "class": "big-details"
@@ -97,11 +97,11 @@ Template["index"] = new Template("Template.index", (function() {
   })))), "\n", "", "\n", "", "\n", "", "\n", "", "\n", "", "\n", HTML.DIV({
     "class": [ "col-xs-3", " ", "stat-holder", " ", "box" ]
   }, HTML.DIV({
-    "class": [ "gasprice", " ", "text-info" ]
-  }, HTML.Raw('<i class="icon-gasprice"></i>'), "\n", HTML.Raw('<span class="small-title">gas price</span>'), "\n", HTML.SPAN({
+    "class": [ "smokeprice", " ", "text-info" ]
+  }, HTML.Raw('<i class="icon-smokeprice"></i>'), "\n", HTML.Raw('<span class="small-title">smoke price</span>'), "\n", HTML.SPAN({
     "class": "small-value"
-  }, Blaze.View("lookup:gasPriceFilter", function() {
-    return Spacebars.mustache(view.lookup("gasPriceFilter"), Spacebars.dot(view.lookup("Blockchain"), "bestStats", "gasPrice", "toString"));
+  }, Blaze.View("lookup:smokePriceFilter", function() {
+    return Spacebars.mustache(view.lookup("smokePriceFilter"), Spacebars.dot(view.lookup("Blockchain"), "bestStats", "smokePrice", "toString"));
   })))), "\n", HTML.DIV({
     "class": [ "col-xs-3", " ", "stat-holder", " ", "box" ]
   }, HTML.DIV({
@@ -202,10 +202,10 @@ Template["index"] = new Template("Template.index", (function() {
     "class": [ "col-xs-3", " ", "stat-holder" ]
   }, HTML.DIV({
     "class": [ "big-info", " ", "chart", " ", "text-info" ]
-  }, "", "\n", HTML.Raw('<span class="small-title">gas spending</span>'), "\n", HTML.getTag("sparkchart")({
-    "class": [ "big-details", " ", "spark-gasspending" ],
+  }, "", "\n", HTML.Raw('<span class="small-title">smoke spending</span>'), "\n", HTML.getTag("sparkchart")({
+    "class": [ "big-details", " ", "spark-smokespending" ],
     data: function() {
-      return Spacebars.mustache(Spacebars.dot(view.lookup("Blockchain"), "gasSpending", "join"));
+      return Spacebars.mustache(Spacebars.dot(view.lookup("Blockchain"), "smokeSpending", "join"));
     }
   }))))), "\n", HTML.DIV({
     "class": [ "col-xs-4", " ", "stat-holder", " ", "map-holder" ]
@@ -323,7 +323,7 @@ Template["index"] = new Template("Template.index", (function() {
   })), "\n", HTML.TH({
     "class": "th-peerPropagationTime"
   }, HTML.I({
-    "class": "icon-gas",
+    "class": "icon-smoke",
     "data-toggle": "tooltip",
     "data-placement": "top",
     title: "Propagation time",
@@ -333,7 +333,7 @@ Template["index"] = new Template("Template.index", (function() {
   }), "\n", HTML.TH({
     "class": "th-peerPropagationAvg"
   }, HTML.I({
-    "class": "icon-gas",
+    "class": "icon-smoke",
     "data-toggle": "tooltip",
     "data-placement": "top",
     title: "Average propagation time",
@@ -399,7 +399,7 @@ Template["index"] = new Template("Template.index", (function() {
       "class": function() {
         return [ "small", " ", Spacebars.mustache(view.lookup("nodeClientClass"), view.lookup("info"), Spacebars.dot(view.lookup("Blockchain"), "currentApiVersion")) ];
       },
-      href: "https://github.com/ethereum/wiki/wiki/Network-Status#updating",
+      href: "https://netstats.420integrated.com/updating",
       target: "_blank",
       "data-toggle": "tooltip",
       "data-placement": "top",

@@ -182,29 +182,29 @@ Template.registerHelper('nodesActiveClass', function(active, total) {
     return 'text-danger';
 });
 
-Template.registerHelper('gasPriceFilter', function(price) {
+Template.registerHelper('smokePriceFilter', function(price) {
     if(typeof price === 'undefined')
-        return "0 wei";
+        return "0 marley";
 
     if(price.length < 4)
-        return numeral(price).format('0,0') + " wei";
+        return numeral(price).format('0,0') + " marley";
 
     if(price.length < 7)
-        return numeral(price/1000).format('0,0') + " kwei";
+        return numeral(price/1000).format('0,0') + " kmarley";
 
     if(price.length < 10)
-        return numeral(price/1000000).format('0,0') + " mwei";
+        return numeral(price/1000000).format('0,0') + " mmarley";
 
     if(price.length < 13)
-        return numeral(price/1000000000).format('0,0') + " gwei";
+        return numeral(price/1000000000).format('0,0') + " gmarley";
 
     if(price.length < 16)
-        return numeral(price/1000000000000).format('0,0') + " szabo";
+        return numeral(price/1000000000000).format('0,0') + " snoop";
 
     if(price.length < 19)
-        return numeral(price.substr(0, price.length - 15)).format('0,0') + " finney";
+        return numeral(price.substr(0, price.length - 15)).format('0,0') + " willie";
 
-    return numeral(price.substr(0, price.length - 18)).format('0,0') + " ether";
+    return numeral(price.substr(0, price.length - 18)).format('0,0') + " 420coin";
 });
 
 
@@ -357,17 +357,17 @@ Template.registerHelper('geoTooltip', function(node) {
         return;
 
     if(node.info.node !== '' && typeof node.info.node !== 'undefined') {
-        var eth_version = node.info.node.split('/');
+        var fourtwenty_version = node.info.node.split('/');
 
-        if(eth_version[1][0] !== 'v' && eth_version[1][2] !== '.')
+        if(fourtwenty_version[1][0] !== 'v' && fourtwenty_version[1][2] !== '.')
         {
-            eth_version.splice(1,1);
+            fourtwenty_version.splice(1,1);
         }
 
         string = "<b>" + node.info.node + "</b>";
         tooltip.push(string);
 
-        string = "Version: <b>" + (eth_version[1]) + "</b>";
+        string = "Version: <b>" + (fourtwenty_version[1]) + "</b>";
         tooltip.push(string);
     }
 
@@ -594,7 +594,7 @@ Template.registerHelper('nodeVersion', function(version) {
     {
         var tmp = version.split('/');
 
-        tmp[0] = tmp[0].replace('Ethereum(++)', 'Eth');
+        tmp[0] = tmp[0].replace('420coin(++)', '420');
 
         if(tmp[0].indexOf('pyethapp') === 0)
         {
@@ -632,8 +632,8 @@ Template.registerHelper('blockClass', function(current, best) {
     return (best - current.block.number < 1 ? 'text-success' : (best - current.block.number === 1 ? 'text-warning' : (best - current.block.number > 1 && best - current.block.number < 4 ? 'text-orange' : 'text-danger')));
 });
 
-Template.registerHelper('gasFilter', function(gas) {
-    return (typeof gas !== 'undefined' ? parseInt(gas) : '?');
+Template.registerHelper('smokeFilter', function(smoke) {
+    return (typeof smoke !== 'undefined' ? parseInt(smoke) : '?');
 });
 
 Template.registerHelper('hashFilter', function(hash) {

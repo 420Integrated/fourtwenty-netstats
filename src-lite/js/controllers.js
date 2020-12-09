@@ -24,7 +24,7 @@ netStatsApp.controller('StatsCtrl', function($scope, $filter, socket, _, toastr)
 	$scope.lastBlocksTime = _.fill(Array(MAX_BINS), 2);
 	$scope.difficultyChart = _.fill(Array(MAX_BINS), 2);
 	$scope.transactionDensity = _.fill(Array(MAX_BINS), 2);
-	$scope.gasSpending = _.fill(Array(MAX_BINS), 2);
+	$scope.smokeSpending = _.fill(Array(MAX_BINS), 2);
 	$scope.miners = [];
 
 
@@ -268,7 +268,7 @@ netStatsApp.controller('StatsCtrl', function($scope, $filter, socket, _, toastr)
 						$scope.nodes[index].stats.mining = data.stats.mining;
 						$scope.nodes[index].stats.hashrate = data.stats.hashrate;
 						$scope.nodes[index].stats.peers = data.stats.peers;
-						$scope.nodes[index].stats.gasPrice = data.stats.gasPrice;
+						$scope.nodes[index].stats.smokePrice = data.stats.smokePrice;
 						$scope.nodes[index].stats.uptime = data.stats.uptime;
 
 						if( !_.isUndefined(data.stats.latency) && _.get($scope.nodes[index], 'stats.latency', 0) !== data.stats.latency )

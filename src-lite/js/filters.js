@@ -78,7 +78,7 @@ angular.module('netStatsApp.filters', [])
 		{
 			var tmp = version.split('/');
 
-			tmp[0] = tmp[0].replace('Ethereum(++)', 'Eth');
+			tmp[0] = tmp[0].replace('420coin(++)', '420');
 
 			if(tmp[0].indexOf('pyethapp') === 0)
 			{
@@ -114,36 +114,36 @@ angular.module('netStatsApp.filters', [])
 		return (best - current.block.number < 1 ? 'text-success' : (best - current.block.number === 1 ? 'text-warning' : (best - current.block.number > 1 && best - current.block.number < 4 ? 'text-orange' : 'text-danger')));
 	};
 })
-.filter('gasPriceFilter', ['$filter', function(filter) {
+.filter('smokePriceFilter', ['$filter', function(filter) {
 	var numberFilter = filter('number');
 	return function(price) {
 		if(typeof price === 'undefined')
-			return "0 wei";
+			return "0 marley";
 
 		if(price.length < 4)
-			return numberFilter(price) + " wei";
+			return numberFilter(price) + " marley";
 
 		if(price.length < 7)
-			return numberFilter(price/1000) + " kwei";
+			return numberFilter(price/1000) + " kmarley";
 
 		if(price.length < 10)
-			return numberFilter(price/1000000) + " mwei";
+			return numberFilter(price/1000000) + " mmarley";
 
 		if(price.length < 13)
-			return numberFilter(price/1000000000) + " gwei";
+			return numberFilter(price/1000000000) + " gmarley";
 
 		if(price.length < 16)
-			return numberFilter(price/1000000000000) + " szabo";
+			return numberFilter(price/1000000000000) + " snoop";
 
 		if(price.length < 19)
-			return numberFilter(price.substr(0, price.length - 15)) + " finney";
+			return numberFilter(price.substr(0, price.length - 15)) + " willie";
 
-		return numberFilter(price.substr(0, price.length - 18)) + " ether";
+		return numberFilter(price.substr(0, price.length - 18)) + " 420coin";
 	}
 }])
-.filter('gasFilter', function() {
-	return function(gas) {
-		return (typeof gas !== 'undefined' ? parseInt(gas) : '?');
+.filter('smokeFilter', function() {
+	return function(smoke) {
+		return (typeof smoke !== 'undefined' ? parseInt(smoke) : '?');
 	}
 })
 .filter('hashFilter', function() {
@@ -410,17 +410,17 @@ angular.module('netStatsApp.filters', [])
 		var string = '';
 
 		if(node.info.node !== '' && typeof node.info.node !== 'undefined') {
-			var eth_version = node.info.node.split('/');
+			var fourtwenty_version = node.info.node.split('/');
 
-			if(eth_version[1][0] !== 'v' && eth_version[1][2] !== '.')
+			if(fourtwenty_version[1][0] !== 'v' && fourtwenty_version[1][2] !== '.')
 			{
-				eth_version.splice(1,1);
+				fourtwenty_version.splice(1,1);
 			}
 
 			string = "<b>" + node.info.node + "</b>";
 			tooltip.push(string);
 
-			string = "Version: <b>" + (eth_version[1]) + "</b>";
+			string = "Version: <b>" + (fourtwenty_version[1]) + "</b>";
 			tooltip.push(string);
 		}
 
